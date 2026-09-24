@@ -1,0 +1,184 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * JIPPI SEA FOODS design system.
+ * Deep-ocean dark canvas, ice-blue accent, heavy condensed display type.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --background: oklch(0.16 0.026 244);
+  --foreground: oklch(0.97 0.007 220);
+  --card: oklch(0.21 0.031 244);
+  --card-foreground: oklch(0.97 0.007 220);
+  --popover: oklch(0.19 0.03 244);
+  --popover-foreground: oklch(0.97 0.007 220);
+  --primary: oklch(0.63 0.152 234);
+  --primary-foreground: oklch(0.14 0.024 244);
+  --secondary: oklch(0.25 0.031 244);
+  --secondary-foreground: oklch(0.97 0.007 220);
+  --muted: oklch(0.25 0.031 244);
+  --muted-foreground: oklch(0.72 0.021 231);
+  --accent: oklch(0.79 0.121 196);
+  --accent-foreground: oklch(0.15 0.025 244);
+  --destructive: oklch(0.61 0.201 22);
+  --destructive-foreground: oklch(0.97 0.007 220);
+  --border: oklch(0.32 0.031 240);
+  --input: oklch(0.32 0.031 240);
+  --ring: oklch(0.63 0.152 234);
+  --whatsapp: oklch(0.64 0.18 149);
+  --whatsapp-foreground: oklch(0.99 0 0);
+
+  --chart-1: oklch(0.63 0.152 234);
+  --chart-2: oklch(0.79 0.121 196);
+  --chart-3: oklch(0.7 0.11 168);
+  --chart-4: oklch(0.8 0.13 84);
+  --chart-5: oklch(0.6 0.18 20);
+
+  --sidebar: oklch(0.19 0.03 244);
+  --sidebar-foreground: oklch(0.97 0.007 220);
+  --sidebar-primary: oklch(0.63 0.152 234);
+  --sidebar-primary-foreground: oklch(0.14 0.024 244);
+  --sidebar-accent: oklch(0.25 0.031 244);
+  --sidebar-accent-foreground: oklch(0.97 0.007 220);
+  --sidebar-border: oklch(0.32 0.031 240);
+  --sidebar-ring: oklch(0.63 0.152 234);
+
+  --shadow-blue: 0 18px 50px -18px oklch(0.63 0.152 234 / 0.55);
+  --shadow-whatsapp: 0 14px 32px -12px oklch(0.64 0.18 149 / 0.7);
+  --gradient-deep: linear-gradient(
+    180deg,
+    oklch(0.16 0.026 244 / 0) 0%,
+    oklch(0.16 0.026 244 / 0.55) 45%,
+    oklch(0.16 0.026 244) 100%
+  );
+  --gradient-ice: linear-gradient(
+    120deg,
+    oklch(0.63 0.152 234 / 0.22) 0%,
+    oklch(0.79 0.121 196 / 0.12) 100%
+  );
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+  }
+}
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+@utility overlay-deep {
+  background-image: var(--gradient-deep);
+}
+
+@utility surface-ice {
+  background-image: var(--gradient-ice);
+}
+
+.site-header {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 50;
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.site-header-clear {
+  background-color: oklch(0.16 0.026 244 / 0.12);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(2px);
+}
+
+.site-header-solid {
+  background-color: oklch(0.16 0.026 244 / 0.92);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(14px);
+}
